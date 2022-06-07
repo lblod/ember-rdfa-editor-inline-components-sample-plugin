@@ -1,14 +1,15 @@
+import Controller from '@lblod/ember-rdfa-editor/model/controller';
 import CounterSpec from './models/inline-components/counter';
 import DropdownSpec from './models/inline-components/dropdown';
 
 export default class RdfaIcSamplePlugin {
-  controller;
+  controller!: Controller;
 
   get name() {
     return 'rdfa-ic-sample';
   }
 
-  initialize(controller) {
+  initialize(controller: Controller) {
     this.controller = controller;
     controller.registerWidget({
       componentName: 'rdfa-ic-plugin-insert',
