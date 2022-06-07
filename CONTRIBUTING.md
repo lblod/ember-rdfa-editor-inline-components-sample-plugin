@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd ember-rdfa-editor-inline-components-sample-plugin`
+* `cd ember-rdfa-editor-rdfa-date-plugin`
 * `npm install`
 
 ## Linting
