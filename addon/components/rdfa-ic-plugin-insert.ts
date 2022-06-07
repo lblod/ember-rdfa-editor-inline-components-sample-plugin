@@ -1,7 +1,11 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import Controller from '@lblod/ember-rdfa-editor/model/controller';
 
-export default class RdfaIcPluginInsertComponent extends Component {
+interface Args {
+  controller: Controller;
+}
+export default class RdfaIcPluginInsertComponent extends Component<Args> {
   @action
   insertCounter() {
     this.args.controller.executeCommand(
