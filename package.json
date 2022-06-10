@@ -1,6 +1,6 @@
 {
   "name": "@lblod/ember-rdfa-ic-sample-plugin",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "description": "inline components sample plugin for ember-rdfa-editor",
   "keywords": [
     "ember-addon",
@@ -31,14 +31,13 @@
   "dependencies": {
     "ember-cli-babel": "^7.26.10",
     "ember-cli-htmlbars": "^5.7.2",
+    "ember-cli-typescript": "^5.1.0",
     "ember-mu-transform-helpers": "^2.0.0",
-    "uuid": "^8.3.2",
-    "ember-cli-typescript": "^5.1.0"
+    "uuid": "^8.3.2"
   },
   "peerDependencies": {
     "@appuniversum/appuniversum": "^1.0.0",
     "@appuniversum/ember-appuniversum": "^1.0.15",
-    "@lblod/ember-rdfa-editor": "git+https://github.com/lblod/ember-rdfa-editor.git#feature/inline-components",
     "ember-concurrency": "^2.0.0"
   },
   "devDependencies": {
