@@ -3,3 +3,11 @@
    ================================== */
 
 @import 'ember-rdfa-editor/a-dummy';
+
+.image-component {
+  height: 200px;
+}
+
+.image-component.selected {
+  border: 2px solid blue;
+}

@@ -1,6 +1,7 @@
 import Controller from '@lblod/ember-rdfa-editor/model/controller';
 import CounterSpec from './models/inline-components/counter';
 import DropdownSpec from './models/inline-components/dropdown';
+import ImageSpec from './models/inline-components/image';
 
 export default class RdfaIcSamplePlugin {
   controller!: Controller;
@@ -16,8 +17,9 @@ export default class RdfaIcSamplePlugin {
       identifier: 'rdfa-ic-plugin/insert',
       desiredLocation: 'insertSidebar',
     });
-    controller.registerInlineComponent(new CounterSpec());
-    controller.registerInlineComponent(new DropdownSpec());
+    controller.registerInlineComponent(new CounterSpec(this.controller));
+    controller.registerInlineComponent(new DropdownSpec(this.controller));
+    controller.registerInlineComponent(new ImageSpec(this.controller));
   }
 
   // modelWrittenHandler(event) {

@@ -1,3 +1,4 @@
+import Controller from '@lblod/ember-rdfa-editor/model/controller';
 import {
   InlineComponentSpec,
   Properties,
@@ -15,7 +16,7 @@ export default class CounterSpec extends InlineComponentSpec {
       <p>${count}</p>
     `;
   }
-  constructor() {
-    super('inline-components/counter', 'span');
+  constructor(controller: Controller) {
+    super('inline-components/counter', 'span', controller);
   }
 }
