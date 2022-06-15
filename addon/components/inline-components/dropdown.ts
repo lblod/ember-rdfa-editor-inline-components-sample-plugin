@@ -1,8 +1,8 @@
-import InlineComponent from '@lblod/ember-rdfa-editor/components/inline-components/inline-component';
+import Component from '@glimmer/component';
 
-export default class InlineComponentsRegulatoryAttachment extends InlineComponent {
+export default class InlineComponentsDropdown extends Component {
   get title() {
-    return 'Example Regulatory Attachment';
+    return 'Example Dropdown';
   }
 
   get articles() {

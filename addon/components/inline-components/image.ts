@@ -1,21 +1,38 @@
 import { action } from '@ember/object';
-import InlineComponent from '@lblod/ember-rdfa-editor/components/inline-components/inline-component';
-import { Properties } from '@lblod/ember-rdfa-editor/model/inline-components/model-inline-component';
+import Component from '@glimmer/component';
+import { InlineComponentArgs } from '@lblod/ember-rdfa-editor/model/inline-components/inline-component-controller';
+import {
+  Properties,
+  State,
+} from '@lblod/ember-rdfa-editor/model/inline-components/model-inline-component';
 
 export interface ImageProps extends Properties {
   imageUrl: string;
 }
-export default class InlineComponentsImage extends InlineComponent<ImageProps> {
+
+export interface ImageState extends State {
+  selected: boolean;
+}
+
+export default class InlineComponentsImage extends Component<
+  InlineComponentArgs<ImageProps, ImageState>
+> {
+  get componentController() {
+    return this.args.componentController;
+  }
   get image() {
-    return this.props.imageUrl;
+    return this.componentController.props.imageUrl;
   }
 
   get selected() {
-    return (this.getStateProperty('selected') as boolean) || false;
+    return (
+      (this.componentController.getStateProperty('selected') as boolean) ||
+      false
+    );
   }
 
   @action
   select() {
-    this.setStateProperty('selected', true);
+    this.componentController.setStateProperty('selected', true);
   }
 }
