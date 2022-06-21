@@ -1,12 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
-import Controller from '@lblod/ember-rdfa-editor/model/controller';
-import { ImageProps } from './inline-components/image';
 
-interface Args {
-  controller: Controller;
-}
-export default class RdfaIcPluginInsertComponent extends Component<Args> {
+export default class RdfaIcPluginInsertComponent extends Component {
   @action
   insertCounter() {
     this.args.controller.executeCommand(
@@ -25,7 +20,7 @@ export default class RdfaIcPluginInsertComponent extends Component<Args> {
 
   @action
   insertImage() {
-    const props: ImageProps = {
+    const props = {
       imageUrl: '',
     };
     this.args.controller.executeCommand(

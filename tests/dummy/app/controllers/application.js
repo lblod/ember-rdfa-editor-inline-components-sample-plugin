@@ -5,5 +5,5 @@ export default class ApplicationController extends Controller {
   plugins = ['rdfa-ic-sample'];
 
   @action
-  rdfaEditorInit(): void {}
+  rdfaEditorInit() {}
 }
