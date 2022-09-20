@@ -4,29 +4,38 @@ import Component from '@glimmer/component';
 export default class RdfaIcPluginInsertComponent extends Component {
   @action
   insertCounter() {
-    this.args.controller.executeCommand(
-      'insert-component',
-      'inline-components/counter'
-    );
+    this.args.controller.perform((transaction) => {
+      transaction.commands.insertComponent({
+        componentName: 'inline-components/counter'
+      })
+    });
   }
 
   @action
   insertDropdown() {
-    this.args.controller.executeCommand(
-      'insert-component',
-      'inline-components/dropdown'
-    );
+    this.args.controller.perform((transaction) => {
+      transaction.commands.insertComponent({
+        componentName: 'inline-components/dropdown'
+      })
+    });
   }
 
   @action
   insertImage() {
-    const props = {
-      imageUrl: '',
-    };
-    this.args.controller.executeCommand(
-      'insert-component',
-      'inline-components/image',
-      props
-    );
+    this.args.controller.perform((transaction) => {
+      transaction.commands.insertComponent({
+        componentName: 'inline-components/image',
+        props: { imageUrl: ''},
+      })
+    });
+  }
+
+  @action
+  insertCard() {
+    this.args.controller.perform((transaction) => {
+      transaction.commands.insertComponent({
+        componentName: 'inline-components/card',
+      })
+    });
   }
 }

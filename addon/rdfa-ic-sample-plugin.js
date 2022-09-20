@@ -1,3 +1,4 @@
+import CardSpec from './models/inline-components/card';
 import CounterSpec from './models/inline-components/counter';
 import DropdownSpec from './models/inline-components/dropdown';
 import ImageSpec from './models/inline-components/image';
@@ -19,5 +20,6 @@ export default class RdfaIcSamplePlugin {
     controller.registerInlineComponent(new CounterSpec(this.controller));
     controller.registerInlineComponent(new DropdownSpec(this.controller));
     controller.registerInlineComponent(new ImageSpec(this.controller));
+    controller.registerInlineComponent(new CardSpec(this.controller));
   }
 }
